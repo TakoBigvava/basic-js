@@ -15,6 +15,12 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function calculateHanoi(/* disksNumber, turnsSpeed */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  const disks= arguments[0]
+  const speed = arguments[1] / 3600;
+   
+ let result = { turns: 0, seconds: 1}
+  result.turns  = Math.pow(2, disks) - 1;
+  result.seconds = Math.floor(result.turns / speed)
+
+return result
 }

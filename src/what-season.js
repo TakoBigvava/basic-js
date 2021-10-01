@@ -12,6 +12,39 @@ import { NotImplementedError } from '../extensions/index.js';
  * 
  */
 export default function getSeason(/* date */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  let date = new Date(arguments[0]);
+  const month = date.getMonth();
+  let result = "";
+if(arguments.length === 0){
+  return "Unable to determine the time of year!"
+} else if(isNaN(Date.parse(arguments[0]))){
+return "Invalid date!"
+} else {
+     switch (month) {
+		case 11:
+		case 0:
+		case 1:
+			result = "winter";
+			break;
+		case 3:
+		case 4:
+		case 2:
+			result = "spring";
+			break;
+		case 6:
+		case 7:
+		case 5:
+			result = "summer";
+			break;
+		case 9:
+		case 10:
+		case 8:
+			result = "fall";
+			break;
+	default:
+    result =  "Invalid date!"
+	}
+
+  return result;
+}   
 }

@@ -14,6 +14,22 @@ import { NotImplementedError } from '../extensions/index.js';
  *
  */
 export default function createDreamTeam(/* members */) {
-  throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-}
+  const arg = Array.from(arguments[0]);
+  let arr=[]
+  let space =  /\s/g;
+  arg.map((name) => {
+    if(typeof name ==="string"){
+      return name.trim()
+    }
+     }).forEach((name)=>{
+  if(typeof name =='string'){
+    arr.push(name[0].toUpperCase())
+  
+  } })
+    
+  if(arr.length == 0){
+    throw new NotImplementedError('Not implemented');
+  }
+   return  arr.sort().join('')
+  }
+  
