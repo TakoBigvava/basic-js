@@ -54,10 +54,10 @@ const order = {
 let letter ='';
 let decodedLetter = '';
 let keyLetter = '';
-let encodedLetter = ''
+let encodedLetter = '';
 let codedArr = [];
 let decodedArr = [];
-//counter for skiiping in seraching in keyword
+//counter for skiiping in searching in keyword
 let count = 0;
 
 export default class VigenereCipheringMachine {
@@ -66,7 +66,7 @@ export default class VigenereCipheringMachine {
   }
   encrypt(message, key) {
     if(message === undefined || key === undefined){
-      throw new Error ("Lack of arguments!")
+      throw new Error ("Incorrect arguments!")
     }
     const m =message.trim().toUpperCase().split(''); 
     const k = key.toUpperCase().split('');
@@ -92,7 +92,7 @@ export default class VigenereCipheringMachine {
   
    decrypt(message, key) {
        if(message === undefined || key === undefined){
-      throw new Error ("Lack of arguments!")
+      throw new Error ("Incorrect arguments!")
     }
     const m =message.trim().toUpperCase().split(''); 
     const k = key.toUpperCase().split('');for (let i = 0; i < m.length; i++){
@@ -103,7 +103,7 @@ export default class VigenereCipheringMachine {
      keyLetter = k[x];
      decodedLetter = findLetter(letter, keyLetter);
      decodedArr.push(decodedLetter)
-       count++
+       count++;
      } else {
      decodedArr.push(letter)
      }
